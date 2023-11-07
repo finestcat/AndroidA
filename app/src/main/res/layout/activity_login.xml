@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/blue"
     tools:context=".Login">
     <ScrollView
         android:layout_width="match_parent"
@@ -17,7 +18,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="500dp"
+                android:layout_marginTop="150dp"
                 android:orientation="vertical"
                 android:padding="20dp">
 
@@ -29,7 +30,8 @@
                     android:drawablePadding="8dp"
                     android:hint="UserName"
                     android:padding="8dp"
-                    android:drawableLeft="@drawable/ic_user_circle"/>
+                    android:drawableLeft="@drawable/ic_user_circle"
+                    android:background="@drawable/text_border"/>
 
                 <EditText
                     android:id="@+id/login_password"
@@ -40,7 +42,8 @@
                     android:hint="Password"
                     android:inputType="textPassword"
                     android:padding="8dp"
-                    android:drawableLeft="@drawable/ic_baseline_password"/>
+                    android:drawableLeft="@drawable/ic_baseline_password"
+                    android:background="@drawable/text_border"/>
 
                 <Button
                     android:id="@+id/login_button"
@@ -48,7 +51,7 @@
                     android:layout_height="70dp"
                     android:layout_marginTop="30dp"
                     android:text="Login"
-                    android:textSize="18sp"
+                    android:textSize="20sp"
                     app:cornerRadius="30dp" />
 
                 <TextView
@@ -57,8 +60,10 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="14dp"
+                    android:drawableLeft="@drawable/edit_icon"
                     android:padding="8dp"
-                    android:text="Not yet registered? Signup"
+                    android:text="Signup"
+                    android:textColor="@color/white"
                     android:textSize="18sp" />
             </LinearLayout>
         </LinearLayout>

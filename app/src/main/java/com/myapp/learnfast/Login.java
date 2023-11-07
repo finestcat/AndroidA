@@ -27,15 +27,16 @@ public class Login extends AppCompatActivity {
                 String userName = binding.loginUserName.getText().toString();
                 String password = binding.loginPassword.getText().toString();
                 if(userName.equals("")||password.equals(""))
-                    Toast.makeText(Login.this, "All inputs are required.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, "All fields are required", Toast.LENGTH_SHORT).show();
                 else{
                     Boolean checkCredentials = DBhelper.checkUserPassword(userName, password);
                     if(checkCredentials == true){
-                        Toast.makeText(Login.this, "You have logged in.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Login.this, "You have logged in", Toast.LENGTH_SHORT).show();
                         Intent intent  = new Intent(getApplicationContext(), MainActivity.class);
+
                         startActivity(intent);
                     }else{
-                        Toast.makeText(Login.this, "Incorrect User Name/ Password, please try again.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Login.this, "Invalid Username/Password, please try again", Toast.LENGTH_SHORT).show();
                     }
                 }
             }

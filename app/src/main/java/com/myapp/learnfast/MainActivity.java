@@ -1,49 +1,96 @@
 package com.myapp.learnfast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-import android.speech.tts.TextToSpeech;
+import androidx.cardview.widget.CardView;
 import android.view.View;
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.TextView;
+import android.speech.tts.TextToSpeech;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+
 import android.widget.Button;
 import android.widget.EditText;
+
+import android.widget.Toast;
+
 import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
 
-    EditText Text;
-    Button btnText;
-    TextToSpeech textToSpeech;
+    TextView welcome_msg;
+    CardView course;
+    CardView quiz;
+    CardView flashcard;
+    CardView progress;
+    CardView award;
+    CardView about;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Text = findViewById(R.id.Text);
-        btnText = findViewById(R.id.btnText);
 
-        textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int i) {
 
-                // if No error is found then only it will run
-                if(i!=TextToSpeech.ERROR){
-                    // To Choose language of speech
-                    textToSpeech.setLanguage(Locale.UK);
-                }
-            }
-        });
-
-        // Adding OnClickListener
-        btnText.setOnClickListener(new View.OnClickListener() {
+        course = findViewById(R.id.course);
+        course.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                textToSpeech.speak(Text.getText().toString(),TextToSpeech.QUEUE_FLUSH,null);
+                Intent intent = new Intent(MainActivity.this,study.class);
+                startActivity(intent);
             }
         });
 
+        quiz = findViewById(R.id.quiz);
+        quiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,quiz.class);
+                startActivity(intent);
+            }
+        });
 
+        flashcard = findViewById(R.id.flashcard);
+        flashcard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,flashcard.class);
+                startActivity(intent);
+            }
+        });
+
+        progress = findViewById(R.id.progress);
+        progress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,progress.class);
+                startActivity(intent);
+            }
+        });
+
+        award = findViewById(R.id.award);
+        award.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,award.class);
+                startActivity(intent);
+            }
+        });
+
+        about = findViewById(R.id.about);
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,about.class);
+                startActivity(intent);
+            }
+        });
+        
 
 
     }
+
 }
